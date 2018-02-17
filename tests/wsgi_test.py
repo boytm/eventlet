@@ -1657,7 +1657,6 @@ class IterableAlreadyHandledTest(_TestBase):
 class ProxiedIterableAlreadyHandledTest(IterableAlreadyHandledTest):
     # same thing as the previous test but ensuring that it works with tpooled
     # results as well as regular ones
-    @tests.skip_with_pyevent
     def get_app(self):
         return tpool.Proxy(super(ProxiedIterableAlreadyHandledTest, self).get_app())
 

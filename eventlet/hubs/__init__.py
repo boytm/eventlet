@@ -19,20 +19,9 @@ def get_default_hub():
     * poll
     * select
 
-    It won't automatically select the pyevent hub, because it's not
-    python-thread-safe.
-
     .. include:: ../doc/common.txt
     .. note :: |internal|
     """
-
-    # pyevent hub disabled for now because it is not thread-safe
-    # try:
-    #    import eventlet.hubs.pyevent
-    #    return eventlet.hubs.pyevent
-    # except:
-    #    pass
-
     select = patcher.original('select')
     try:
         import eventlet.hubs.epolls
